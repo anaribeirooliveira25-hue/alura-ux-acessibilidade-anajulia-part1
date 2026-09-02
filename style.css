@@ -1,0 +1,77 @@
+/* Configurações Gerais para Acessibilidade */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px; /* Fonte maior para facilitar a leitura */
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #111111; /* Alto contraste entre o texto e o fundo */
+    padding: 20px;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    background-color: #004085; /* Azul escuro para alto contraste */
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.cabecalho h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.cabecalho p {
+    font-size: 24px;
+}
+
+/* Conteúdo Principal */
+.conteudo {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Cards das Dicas */
+.card-dica {
+    background-color: #ffffff;
+    border: 3px solid #004085; /* Borda espessa para delimitação clara */
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-dica h2 {
+    color: #004085;
+    font-size: 28px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #004085;
+    padding-bottom: 5px;
+}
+
+.card-dica ul {
+    list-style-type: disc;
+    padding-left: 30px;
+}
+
+.card-dica li {
+    margin-bottom: 15px; /* Espaçamento amplo entre os itens */
+}
+
+/* Rodapé */
+.rodape {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    font-size: 20px;
+    color: #333333;
+    font-weight: bold;
+}
