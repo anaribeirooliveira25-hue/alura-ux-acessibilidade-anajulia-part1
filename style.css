@@ -16,7 +16,7 @@ body {
 
 /* Cabeçalho */
 .cabecalho {
-    background-color: #004085; /* Azul escuro para alto contraste */
+    background-color: #fd8bc1; /* Azul escuro para alto contraste */
     color: #ffffff;
     text-align: center;
     padding: 30px 20px;
@@ -39,22 +39,90 @@ body {
     margin: 0 auto;
 }
 
-/* Cards das Dicas */
-.card-dica {
-    background-color: #ffffff;
-    border: 3px solid #004085; /* Borda espessa para delimitação clara */
-    border-radius: 12px;
-    padding: 25px;
+/* Botão que visualmente simula o card fechado na tela */
+.card-wrapper {
     margin-bottom: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.btn-abrir {
+    display: block;
+    background-color: #ffffff;
+    color: #fd8bc1;
+    border: 3px solid #fd8bc1;
+    border-radius: 12px;
+    padding: 20px;
+    font-size: 26px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-abrir:hover, .btn-abrir:focus {
+    background-color: #e2eefd;
+    transform: translateY(-2px);
+    outline: none;
+}
+
+/* Esconde o Modal por padrão */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75); /* Fundo escuro semitransparente (overlay) */
+    backdrop-filter: blur(4px); /* Efeito opcional de desfoque no fundo */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Quando o link de um card é clicado, ativa a regra :target */
+.modal:target {
+    display: flex;
+}
+
+/* Estrutura do Card dentro do Modal em Destaque */
+.modal-conteudo {
+    background-color: #ffffff;
+    border: 4px solid #004085;
+    border-radius: 16px;
+    padding: 35px 30px 30px 30px;
+    max-width: 700px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    animation: surgimento 0.3s ease-out;
+}
+
+/* Botão Fechar no canto superior do Modal */
+.btn-fechar {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #004085;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.btn-fechar:hover, .btn-fechar:focus {
+    color: #d9534f; /* Muda para vermelho ao passar o mouse */
+}
+
+/* Estilização interna dos Cards */
 .card-dica h2 {
     color: #004085;
     font-size: 28px;
     margin-bottom: 15px;
-    border-bottom: 2px solid #004085;
+    border-bottom: 3px solid #004085;
     padding-bottom: 5px;
+    padding-right: 30px; /* Dá espaço para não encostar no botão de fechar */
 }
 
 .card-dica ul {
@@ -63,7 +131,19 @@ body {
 }
 
 .card-dica li {
-    margin-bottom: 15px; /* Espaçamento amplo entre os itens */
+    margin-bottom: 15px;
+}
+
+/* Animação Suave ao Abrir */
+@keyframes surgimento {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* Rodapé */
